@@ -1,0 +1,51 @@
+<script>
+// handles showing form based on radio button selection
+const requestButton = document.getElementById("request-tool");
+const submitButton = document.getElementById("submit-tool");
+
+const requestForm = document.getElementById("request-form");
+const submitForm = document.getElementById("submit-form");
+
+requestButton?.addEventListener("click", (e) => {
+    requestForm.style.display = "block";
+    submitForm.style.display = "none";
+});
+
+submitButton?.addEventListener("click", (e) => {
+    requestForm.style.display = "none";
+    submitForm.style.display = "block";
+});
+
+</script>
+
+<div>
+  <h1>Request A Tool</h1>
+  <form>
+    <p>I want to...</p>
+    <label for="request-tool">Request a tool I would like</label>
+    <input type="radio" id="request-tool" name="action" value="request" />
+    <br>
+    <label for="submit-tool">Submit a tool I have found / made</label>
+    <input type="radio" id="submit-tool" name="action" value="submit" />
+    <br />
+  </form>
+
+  <!-- Requesting a tool form -->
+  <form id="request-form" style="display: none;" class="space-y-5">
+    <label for="tool-name">Tool Name</label>
+    <input type="text" placeholder="The Name of the tool you would like" id="tool-name" />
+    <br>
+    <input type="text" placeholder="" />
+    <br>
+    <button>Submit Request</button>
+  </form>
+
+  <!-- Submitting a tool form -->
+  <form id="submit-form" style="display:none;" class="space-y-5">
+    <input type="text" placeholder="Tool Name" />
+    <br>
+    <input type="url" placeholder="Tool URL" />
+    <br>
+    <button>Submit Tool</button>
+  </form>
+</div>
