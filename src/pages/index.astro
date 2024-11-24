@@ -1,22 +1,28 @@
- <div>
-  <h1 class="text-7xl">Plain</h1>
+---
+import Page from "../components/ui/page.astro"
+---
+ <Page>
+  <div class="p-12">
+  <h1 class="text-9xl">Plain</h1>
+  <p class="text-gray-700">Take back the web.</p>
+  </div>
+
+  <div class="flex justify-center space-x-4 m-5">
+  <h2><a class="text-4xl text-blue-600 underline hover:text-blue-900" href="links">List of Links</a></h2>
+  <h2><a class="text-4xl text-blue-600 underline hover:text-blue-900" href="request">Request/Add a tool</a></h2>
+  </div>
+
   <p class="text-3xl">What is plain?</p>
   <p>
     Plain is a attempt at a solution for the pain and suffering from
-    enshittification of the web. <a class="text-blue-600 underline hover:text-blue-900" href="https://www.youtube.com/watch?v=4EmstuO0Em8"
+    enshittification of the web. <a class="text-blue-600 underline hover:text-blue-900" href="enshittification"
       >What is enshittification?</a
     >
   </p>
-
+  <br>
   <p>
-    Plain Aims to provide a list of links to deshittified tools, while also
-    providing some.
+    Plain aims to provide a list of links to deshittified tools, and provide a gateway for developers who want to help improve the state of the web.
   </p>
 
-  <h2><a class="text-blue-600 underline hover:text-blue-900" href="links">List of Links</a></h2>
-
-  <h2><a class="text-blue-600 underline hover:text-blue-900" href="request">Request a tool</a></h2>
-</div>
-
-<style>
-</style>
+  <span class="italic">"its just plain simple, and it works."</span>
+</Page>
