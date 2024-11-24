@@ -1,0 +1,55 @@
+<!-- tools that developers have made from wishlist/etc and submit. -->
+
+<form id="contribution-form" class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+  <h1 class="text-3xl font-bold text-gray-800">Submit a Tool I Found or Made (Developers)</h1>
+  
+  <div class="space-y-2">
+      <label for="tool-name" class="block text-sm font-medium text-gray-700">Tool Name</label>
+      <input
+          type="text"
+          id="tool-name"
+          placeholder="Tool Name"
+          class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+          required
+      />
+  </div>
+  
+  <div class="space-y-2">
+      <label for="tool-description" class="block text-sm font-medium text-gray-700">Tool Description</label>
+      <textarea
+          id="tool-description"
+          placeholder="A brief description of the tool"
+          class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+          rows="4"
+          required
+      ></textarea>
+  </div>
+  
+  <div class="space-y-2">
+      <label for="tool-url" class="block text-sm font-medium text-gray-700">Link to Tool</label>
+      <input
+          type="url"
+          id="tool-url"
+          placeholder="https://example.com"
+          class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+          required
+      />
+  </div>
+  
+  <div class="space-y-2">
+      <label for="email" class="block text-sm font-medium text-gray-700">Contact Information (Optional)</label>
+      <input
+          type="email"
+          id="email"
+          placeholder="me@example.com"
+          class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+      />
+  </div>
+  
+  <button
+      type="submit"
+      class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+  >
+      Submit
+  </button>
+</form>

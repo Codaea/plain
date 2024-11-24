@@ -1,51 +1,83 @@
-<script>
-// handles showing form based on radio button selection
-const requestButton = document.getElementById("request-tool");
-const submitButton = document.getElementById("submit-tool");
+---
+import Contribution from "../components/forms/contribution.astro";
+import Wishlist from "../components/forms/wishlist.astro";
+---
 
-const requestForm = document.getElementById("request-form");
-const submitForm = document.getElementById("submit-form");
+<div class="space-y-5">
+  <div class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+    <h1 class="text-4xl font-bold text-gray-800">Request a Tool</h1>
+    <p class="text-lg text-gray-600">I want to...</p>
 
-requestButton?.addEventListener("click", (e) => {
-    requestForm.style.display = "block";
-    submitForm.style.display = "none";
-});
+    <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+            <input 
+                type="radio" 
+                id="wishlist-form" 
+                name="action" 
+                value="request" 
+                class="w-5 h-5 text-blue-600 border-gray-300 focus:ring-blue-500"
+            />
+            <label 
+                for="wishlist-form" 
+                class="text-gray-700 text-lg font-medium"
+            >
+                Request a tool I would like
+            </label>
+        </div>
 
-submitButton?.addEventListener("click", (e) => {
-    requestForm.style.display = "none";
-    submitForm.style.display = "block";
-});
+        <div class="flex items-center space-x-3">
+            <input 
+                type="radio" 
+                id="contribute-form" 
+                name="action" 
+                value="submit" 
+                class="w-5 h-5 text-blue-600 border-gray-300 focus:ring-blue-500"
+            />
+            <label 
+                for="contribute-form" 
+                class="text-gray-700 text-lg font-medium"
+            >
+                Submit a tool I have found / made
+            </label>
+        </div>
+    </div>
 
-</script>
-
-<div>
-  <h1>Request A Tool</h1>
-  <form>
-    <p>I want to...</p>
-    <label for="request-tool">Request a tool I would like</label>
-    <input type="radio" id="request-tool" name="action" value="request" />
-    <br>
-    <label for="submit-tool">Submit a tool I have found / made</label>
-    <input type="radio" id="submit-tool" name="action" value="submit" />
-    <br />
-  </form>
+    <p class="unselected text-gray-500 italic">Select an option above to begin</p>
+</div>
 
   <!-- Requesting a tool form -->
-  <form id="request-form" style="display: none;" class="space-y-5">
-    <label for="tool-name">Tool Name</label>
-    <input type="text" placeholder="The Name of the tool you would like" id="tool-name" />
-    <br>
-    <input type="text" placeholder="" />
-    <br>
-    <button>Submit Request</button>
-  </form>
+  <div id="wishlist" style="display: none;">
+    <Wishlist />
+  </div>
 
   <!-- Submitting a tool form -->
-  <form id="submit-form" style="display:none;" class="space-y-5">
-    <input type="text" placeholder="Tool Name" />
-    <br>
-    <input type="url" placeholder="Tool URL" />
-    <br>
-    <button>Submit Tool</button>
-  </form>
+  <div id="contribution" style="display:none" >
+    <Contribution />
+  </div>
 </div>
+
+<script>
+  // multi form managment
+
+  // inital unselected message
+  const unselectedMessage = document.querySelector(".unselected");
+  // form elements
+  const wishlist = document.getElementById("wishlist");
+  const contribution = document.getElementById("contribution");
+
+  // handles showing form based on radio button selection
+  const wishlistForm = document.getElementById("wishlist-form");
+  const contributeForm = document.getElementById("contribute-form");
+
+  contributeForm?.addEventListener("click", (e) => {
+    unselectedMessage.style.display = "none"; // remove unselected message
+    wishlist.style.display = "none";
+    contribution.style.display = "block";
+  });
+
+  wishlistForm?.addEventListener("click", (e) => {
+    unselectedMessage.style.display = "none"; // remove unselected message
+    wishlist.style.display = "block";
+    contribution.style.display = "none";
+  });
+</script>
