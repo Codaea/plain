@@ -1,10 +1,11 @@
-<form id="request-form" class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+<form id="request-form" action="https://formsubmit.co/dakotajayroth@gmail.com" method="POST"  class="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
     <h1 class="text-3xl font-bold text-gray-800">Request a Tool That Would Be Useful to Have (End Users)</h1>
     
     <div class="space-y-2">
         <label for="tool-name" class="block text-sm font-medium text-gray-700">Tool Name</label>
         <input
             type="text"
+            name="tool-name"
             id="tool-name"
             placeholder="The name of the tool you would like"
             class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
@@ -15,6 +16,7 @@
     <div class="space-y-2">
         <label for="tool-description" class="block text-sm font-medium text-gray-700">Why Do You Need This Tool?</label>
         <textarea
+            name="tool-description"
             id="tool-description"
             placeholder="Describe the problem it would solve or features you'd want"
             class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
@@ -26,6 +28,7 @@
         <label for="email" class="block text-sm font-medium text-gray-700">Contact Information (Optional)</label>
         <input
             type="email"
+            name="response-email"
             id="email"
             placeholder="me@example.com"
             class="w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
